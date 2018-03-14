@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.title {
+  font-family: 'Acme', sans-serif;
+  font-size:60px;
+  color: #23bcea;
+  margin-top: 70px;
+  margin-bottom: 30px
+}
+.my-todos-title {
+  font-size: 30px;
+}
+.h2-title {
+  font-size: 30px;
+  margin-left: 100px;
+}
+.icon-m-l {
+  margin-left: 7px;
+}
+.title-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.button-div {
+  position: relative;
+  bottom: -20px;
+}
+.login-form-container {
+  background-color: white;
+  height: 370px;
+  width: 440px;
+  margin: 0 auto;
+  padding: 10px 36px;
+  box-shadow: 1px 1px 4px 0px #888888;
+}
+.todo-list-container {
+  clear:both;
+  background-color: white;
+  height: auto;
+  width: 800px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 4px 0px #888888;
+  text-align:left !important;
+}
+.todo-item {
+  width: 750px;
+  margin: 0 auto;
+}
+.home-container {
+  height: auto;
+  width: 800px;
+  padding:0;
+  margin-top: 50px;
+}
+.text-fields-container {
+  margin: 0 auto;
+  clear: both;
+  width: 600px;
+}
+.save-button-row {
+  float: right;
+}
+.login-text {
+  text-align:left;
+  font-weight:bolder;
+  font-size: 22px;
+}
+.input-form {
+  margin: 20px 0;
+}
+.login-btn {
+  width:100px;
+}
+.bottom-link {
+  text-decoration: none !important;
+  color:#3097d1;
+  cursor: pointer;
+}
+#navBrand {
+  font-family: 'Acme', sans-serif;
+  font-size:25px;
+}
+.help-block{
+	float:left;
+	margin-right: 8px;
+}
