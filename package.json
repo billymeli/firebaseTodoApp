@@ -29,9 +29,11 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "@material-ui/core": "^3.1.1",
     "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.1.18",
-    "firebase": "^4.11.0",
+    "firebase": "^4.13.1",
+    "giphy-js-sdk-core": "^1.0.5",
     "history": "^4.6.3",
     "lodash": "^3.10.1",
     "material-ui": "^0.20.0",
@@ -42,6 +44,7 @@
     "react-dom": "^0.14.3",
     "react-firebase-file-uploader": "^2.4.1",
     "react-flip-move": "^2.9.15",
+    "react-image-lightbox": "^4.6.0",
     "react-images-upload": "^1.1.1",
     "react-modal": "^2.3.2",
     "react-promise": "^1.2.0",

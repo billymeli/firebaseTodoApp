@@ -1,16 +1,15 @@
 import {
-  TODOS_SUCCESS
+  GIFS_SUCCESS
 } from '../constants';
 
 const initialState = {
-  todos: [],
+  gifs: [],
 }
 
 export default (state = initialState, action) => {
-  console.log('action in home reducer ', action);
   switch(action.type) {
-    case TODOS_SUCCESS:
-      return { ...state, todos: action.payload };
+    case GIFS_SUCCESS:
+      return { ...state, gifs: action.payload };
 
     default:
       return state;

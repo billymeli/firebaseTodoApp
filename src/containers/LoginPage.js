@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
-import Footer from '../components/Footer.js';
 var firebase = require("firebase");
 
 class LoginPage extends Component {
@@ -24,7 +23,7 @@ toggleSignup() {
     return (
       <div>
         <div>
-          <h1 className='title'>Todos</h1>
+          <h1 className='title'>Gif Browser</h1>
           <div className="login-form-container">
             { this.state.showLogin ?
               <LoginForm handleSignupClick={this.toggleLogin} /> :

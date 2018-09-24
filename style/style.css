@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: black;
 }
 .title {
   font-family: 'Acme', sans-serif;
@@ -36,22 +37,8 @@ body {
   padding: 10px 36px;
   box-shadow: 1px 1px 4px 0px #888888;
 }
-.todo-list-container {
-  clear:both;
-  background-color: white;
+.home_Container {
   height: auto;
-  width: 800px;
-  margin: 0 auto;
-  box-shadow: 1px 1px 4px 0px #888888;
-  text-align:left !important;
-}
-.todo-item {
-  width: 750px;
-  margin: 0 auto;
-}
-.home-container {
-  height: auto;
-  width: 800px;
   padding:0;
   margin-top: 50px;
 }
@@ -86,4 +73,94 @@ body {
 .help-block{
 	float:left;
 	margin-right: 8px;
+}
+.myBox{
+  margin: 0 auto;
+  height: 200px;
+  width: 600px;
+  border: 1px solid grey;
+}
+.label{
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 15px;
+  font-weight: normal;
+  color: black;
+}
+.labelRow{
+  display: inline-grid;
+}
+.search_bar {
+  width: 65%;
+  margin: 20px auto;
+}
+.gif_input {
+  width: 100%;
+  padding: 5px
+}
+.gifs_container {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-gap: 30px;
+  background-color: transparent;
+  margin: 30px auto;
+  width: 800px;
+  padding: 0;
+}
+.gifs_wrapper {
+  width: 100%;
+}
+.gif_image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.gif_container{
+  position: relative;
+}
+.gif_container:hover .gif_image{
+  cursor: pointer;
+  opacity: 0.7;
+}
+.starFilled {
+  color: #ffb40f !important;
+  opacity: 1 !important;
+}
+.star_empty {
+  opacity: 0;
+  color: #ffb40f
+}
+.star_overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+.star_icon{
+  position: relative;
+  top: 12px;
+  right: 95px;
+  font-size: 20px;
+  z-index: 1000;
+}
+.star_overlay:hover .star_empty{
+  opacity:1;
+}
+.star_icon:hover {
+  cursor: pointer;
+}
+.mygifs_title {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+.no_gifs_text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #b2b2b2;
+  position: relative;
+  top: 120px;
 }

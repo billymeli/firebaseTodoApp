@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import LoginPage from '../containers/LoginPage';
-import Home from '../containers/Home';
-import NewTodoForm from '../containers/NewTodoForm';
 import NavBar from '../containers/NavBar';
+import GifBrowser from '../containers/GifBrowser';
+import MyGifs from '../containers/MyGifs';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { Route, Redirect, Switch } from 'react-router-dom';
@@ -40,9 +40,9 @@ class App extends Component {
           <div>
 
                 <Switch>
-                <PrivateRoute authenticated={this.props.authenticated }  path="/Todo/new" component={ NewTodoForm } />
-                <PrivateRoute authenticated={this.props.authenticated }  path="/Home" component={ Home } />
-                <PrivateRoute authenticated={this.props.authenticated } exact path="/" component={Home} />
+                <PrivateRoute authenticated={this.props.authenticated }  path="/MyGifs" component={ MyGifs } />
+                <PrivateRoute authenticated={this.props.authenticated }  path="/Home" component={ GifBrowser } />
+                <PrivateRoute authenticated={this.props.authenticated } exact path="/" component={GifBrowser} />
                 </Switch>
 
               <PublicRoute authenticated={this.props.authenticated }  path="/LoginPage" component={ LoginPage } />

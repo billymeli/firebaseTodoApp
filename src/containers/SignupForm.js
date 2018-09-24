@@ -28,7 +28,6 @@ class SignupForm extends Component {
   }
 
   handleFormSubmit = (values) => {
-    console.log("Values is: ", values);
     this.props.signUp(values);
   };
 

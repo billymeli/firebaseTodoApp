@@ -7,7 +7,7 @@ import {
   FORM_INPUT_CHANGED,
   DATE_INPUT_CHANGED,
   TIME_INPUT_CHANGED,
-  TODOS_SUCCESS,
+  GIFS_SUCCESS,
   FETCH_TODOS,
 } from '../constants'
 
@@ -99,35 +99,11 @@ export function verifyAuth() {
     }
 }
 
-export const onFormTextInputChange = (key, value) => {
-  return {
-    type: FORM_INPUT_CHANGED,
-    payload: {key, value},
-  };
-}
-
-export const onDateInputChange = (e, date) => {
-  return {
-    type: DATE_INPUT_CHANGED,
-    payload: date,
-  };
-}
-
-export const onTimeInputChange = (e, time) => {
-  return {
-    type: TIME_INPUT_CHANGED,
-    payload: time,
-  };
-}
-
-export const saveTodo = (data) => {
+export const saveGif = (gif) => {
   const user = Firebase.auth().currentUser;
-  firestore.collection("todos").add({
-    id: user.uid,
-    title: data.title,
-    description: data.description,
-    date: data.date,
-    time: data.time
+  firestore.collection("Gifs").add({
+    id: gif.id,
+    imageUrl: gif.images.original.gif_url
   }).then((docRef) => {
     console.log("Document written with ID: ", docRef.id);
   })
@@ -136,26 +112,24 @@ export const saveTodo = (data) => {
   });
 }
 
-export const onSuccessTodos = (todos) => {
-  console.log('calling success todos ', todos);
+export const onSuccessGifs = (gifs) => {
   return {
-    type: TODOS_SUCCESS,
-    payload: todos,
+    type: GIFS_SUCCESS,
+    payload: gifs,
   };
 }
 
-export const fetchTodos = () => {
+export const fetchFavoriteGifs = () => {
   return function (dispatch) {
     const user = Firebase.auth().currentUser;
-    firestore.collection("todos").where("id", "==", user.uid)
+    firestore.collection("Gifs")
     .get()
     .then(function(querySnapshot) {
-      const todos = []
+      const gifs = [];
       querySnapshot.forEach((doc) => {
-        todos.push(doc.data());
+        gifs.push(doc.data());
       });
-      console.log('docs array ', todos);
-      dispatch(onSuccessTodos(todos));
+      dispatch(onSuccessGifs(gifs));
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
