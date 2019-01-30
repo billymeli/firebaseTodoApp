@@ -25,6 +25,7 @@ class GifBrowser extends React.Component {
         gifIndex: 0,
         isOpen: false,
         favoriteGifIds: [],
+        starClicked: false,
     }
     this.gifSearch = this.gifSearch.bind(this);
     this.gifTrending = this.gifTrending.bind(this);
@@ -89,6 +90,7 @@ class GifBrowser extends React.Component {
 
   GifSelected(gifIndex) {
     this.setState({ isOpen: true, gifIndex });
+    console.log("image clicked");
   }
 
   handleKeywordChange(event) {
@@ -112,6 +114,7 @@ class GifBrowser extends React.Component {
     firestore.collection("Gifs").doc(gif.id).set({
       id: gif.id,
       imageUrl: gif.imageUrl,
+      user: user.uid,
     });
   }
 
@@ -124,6 +127,7 @@ class GifBrowser extends React.Component {
   }
 
   render() {
+    console.log("isOpen, start clicked ", this.state.isOpen, this.state.starClicked);
     const gifSearch = _.debounce((keyword) => {
       if (keyword !== "") {
         this.gifSearch(keyword);

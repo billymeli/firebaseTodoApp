@@ -122,7 +122,7 @@ export const onSuccessGifs = (gifs) => {
 export const fetchFavoriteGifs = () => {
   return function (dispatch) {
     const user = Firebase.auth().currentUser;
-    firestore.collection("Gifs")
+    firestore.collection("Gifs").where("user", "==", user.uid)
     .get()
     .then(function(querySnapshot) {
       const gifs = [];

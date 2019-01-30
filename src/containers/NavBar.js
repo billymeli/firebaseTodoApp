@@ -3,7 +3,7 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import * as Actions from '../actions';
 import { connect } from 'react-redux';
-var firebase = require('firebase');
+var Firebase = require('firebase');
 
 
 class NavBar extends Component {
@@ -18,6 +18,7 @@ class NavBar extends Component {
   }
 
   render() {
+    const user = Firebase.auth().currentUser;
     return (
       <div>
       <Navbar inverse collapseOnSelect className="app-navBar">
@@ -41,6 +42,7 @@ class NavBar extends Component {
             </li>
           </Nav>
           <Nav pullRight>
+            <NavItem eventKey={1} href="/MyGifs">{user.email}</NavItem>
             <NavDropdown eventKey={3} title="Account" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Action</MenuItem>
               <MenuItem eventKey={3.2}>Another action</MenuItem>

@@ -123,6 +123,13 @@ margin-bottom:15px;
 }
 .app-navBar {
 	border-radius:unset !important;
+	background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%);
+	position: fixed !important;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10000000;
+	margin-bottom: 30px !important;
 }
 
 #p-header-bckg{

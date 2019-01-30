@@ -19,7 +19,6 @@ class MyGifs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        keyword: "",
         gifImages: [],
         gifIndex: 0,
         isOpen: false,
@@ -27,7 +26,6 @@ class MyGifs extends React.Component {
         favoriteGifs: [],
     }
     this.onToggleStar = this.onToggleStar.bind(this);
-    this.saveGif = this.saveGif.bind(this);
     this.deleteFavoriteGif = this.deleteFavoriteGif.bind(this);
   }
 
@@ -57,22 +55,16 @@ class MyGifs extends React.Component {
 
   onToggleStar(gif) {
     const favoriteGifIds = this.state.favoriteGifIds;
+    const favoriteGifs = this.state.favoriteGifs;
     if (favoriteGifIds.includes(gif.id)) {
       this.deleteFavoriteGif(gif.id);
       favoriteGifIds.splice(favoriteGifIds.indexOf(gif.id), 1);
+      favoriteGifs.splice(favoriteGifs.indexOf(gif), 1);
     } else {
       this.saveGif(gif);
       favoriteGifIds.push(gif.id);
     }
-    this.setState({ favoriteGifIds });
-  }
-
-  saveGif(gif) {
-    const user = Firebase.auth().currentUser;
-    firestore.collection("Gifs").doc(gif.id).set({
-      id: gif.id,
-      imageUrl: gif.images.original.gif_url
-    });
+    this.setState({ favoriteGifIds, favoriteGifs });
   }
 
   deleteFavoriteGif(gifId) {
